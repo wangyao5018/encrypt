@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encode</title>
+    <script src="jsencrypt.min.js"></script>
+</head>
+<body>
+<script>
+    let encrypt = new JSEncrypt()
+    // 从rsa_public_key.pem 粘贴过来的
+    let pubKey = '-----BEGIN PUBLIC KEY-----\n' +
+        'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDG1UxJvH6nByHbrt66WhbvIPz\n' +
+        '1KcOuUk3gfSUPYy3OyIYgOH2bisRcLYfJ64NejmLxJtIAJ+6687lDzPWjicueZYN\n' +
+        '/f1dvvC3sCt2WL9lSwRvXCbhPVaIWr/HQw3FSALWQgLLGB2FSO/nHDzBMB6AmNXG\n' +
+        '5kR3A5C0ydh1opuAlQIDAQAB\n' +
+        '-----END PUBLIC KEY-----\n'
+    encrypt.setPublicKey(pubKey)
+    let encrypted = encrypt.encrypt('hello jack')
+    console.log(encrypted)
+
+
+</script>
+</body>
+</html>
